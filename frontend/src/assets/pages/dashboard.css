@@ -1,0 +1,481 @@
+
+/* Décalage du contenu principal pour ne pas être caché */
+.content {
+  margin-left: 300px; /* marge égale à la largeur de la sidebar */
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* login.css */
+.login-container {
+  max-width: 320px;
+  height: 600px
+  
+  ;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-logo {
+  height: 300px;
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 150px;
+  object-fit: contain;
+  margin-bottom: 50px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0072CE; /* Bleu Tunisair */
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.login-form button:hover:not(:disabled) {
+  background-color: #005bb5;
+}
+
+.login-error {
+  color: red;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.login-success {
+  color: green;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+/* Container principal */
+.page-container {
+padding: 30px 25px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: #333;
+}
+/* Overlay du modal (fond sombre transparent) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Fenêtre modale */
+.modal {
+  background: #fefefe;
+  padding: 30px 28px;
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Titre modale */
+.modal h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #222;
+  text-align: center;
+}
+
+/* Groupes de champs formulaire */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+/* Inputs, selects, textarea */
+.formGroup input[type="text"],
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Textarea hauteur minimale */
+.formGroup textarea {
+  min-height: 80px;
+}
+
+/* Actions boutons modale */
+.modalActions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+/* Boutons modale */
+.submitButton {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #1e7e34;
+}
+
+.cancelButton {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cancelButton:hover {
+  background-color: #a71d2a;
+}
+
+/* Responsive modale */
+@media (max-width: 600px) {
+  .modal {
+    width: 95%;
+    padding: 20px 16px;
+  }
+
+  .submitButton, .cancelButton {
+    flex: 1;
+  }
+
+  .modalActions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Barre de recherche */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.search-bar input[type="text"] {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar input[type="text"]:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Bouton */
+.btn {
+  padding: 10px 18px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Titre */
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Table */
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* espacement entre lignes */
+  font-size: 1rem;
+}
+
+.data-table thead th {
+  text-align: left;
+  padding: 14px 12px;
+  background: #f5f7fa;
+  font-weight: 700;
+  color: #555;
+  border-bottom: 2px solid #e1e4e8;
+  user-select: none;
+}
+
+.data-table tbody tr {
+  background: #fafafa;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background-color: #e9f0ff;
+}
+
+.data-table tbody td {
+  padding: 14px 12px;
+  color: #444;
+  vertical-align: middle;
+}
+
+/* Colonne aéroport principal */
+.data-table tbody td:nth-child(5) {
+  font-weight: 600;
+  color: #666;
+}
+
+/* Boutons dans la table */
+.btn-edit {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #1e7e34;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #a71d2a;
+}
+
+/* Formulaire d’édition */
+.form-container {
+  max-width: 480px;
+  margin: 35px auto 0;
+  padding: 30px 28px;
+  background: #fefefe;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.05);
+}
+
+.form-container h3 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #222;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-container input[type="text"]:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Checkbox */
+.form-container input[type="checkbox"] {
+  margin-left: 10px;
+  transform: scale(1.2);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Boutons formulaire */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .form-container {
+    width: 90%;
+  }
+}
+.sidebar {
+  width: 300px; /* largeur augmentée */
+  height: 100vh;
+  background-color: #004080; /* bleu Tunisair */
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* sidebar fixe */
+  top: 0;
+  left: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* Nav prend tout l'espace vertical disponible */
+.sidebar nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+/* Style des liens */
+.sidebar nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #0066cc;
+  color: #e0e0e0;
+}
+
+/* Bouton logout fixé en bas */
+.sidebar button {
+  background-color: #cc3300;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+
+  margin-top: auto; /* pousse le bouton en bas */
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.sidebar button:hover {
+  background-color: #e64c33;
+}

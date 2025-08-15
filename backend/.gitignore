@@ -1,0 +1,12 @@
+# Ignore .env (ne jamais partager les infos sensibles)
+.env
+
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Autres fichiers système
+.DS_Store
