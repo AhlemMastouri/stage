@@ -61,3 +61,12 @@ L’application repose sur une base de données structurée pour :
 ### 1️⃣ Cloner le dépôt
 ```bash
 git clone https://github.com/tonpseudo/nom-du-repo.git
+2️⃣ Se déplacer dans le dossier
+cd nom-du-repo
+
+3️⃣ Installer les dépendances
+npm install
+
+4️⃣ Lancer le projet
+npm start
+
